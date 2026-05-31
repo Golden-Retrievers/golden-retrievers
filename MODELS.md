@@ -4,6 +4,19 @@ Foundation models we build on, and models we train/publish. Trained checkpoints 
 
 > Compiled from a verified SOTA review (2026). **Watch licenses** — several SOTA animal models are non-commercial.
 
+## Models we are building
+
+| Model | Repo · 🤗 | Input → Output | Status |
+|---|---|---|---|
+| **Disease GWAS** (mixed model) | [gr-cancer-genomics](https://github.com/golden-retrievers/gr-cancer-genomics) | genotypes + phenotype + GRM → per-SNP association | ✅ scaffold, λ=1.025 |
+| **Polygenic Risk Score** | [gr-cancer-genomics](https://github.com/golden-retrievers/gr-cancer-genomics) · [🤗 gr-cancer-prs](https://huggingface.co/golden-retrievers/gr-cancer-prs) | genotypes → per-dog risk score | 🚧 next |
+| **MIL slide classifier** | [gr-histopathology](https://github.com/golden-retrievers/gr-histopathology) · [🤗](https://huggingface.co/golden-retrievers/gr-histopathology) | tile embeddings → slide grade + heatmap | ✅ built, CCMCT-wired |
+| **Mitotic-figure detector** | [gr-histopathology](https://github.com/golden-retrievers/gr-histopathology) | HPF tiles → mitosis boxes/count | 🚧 planned |
+| **Multi-modal cancer risk** | [gr-health-multimodal](https://github.com/golden-retrievers/gr-health-multimodal) · [🤗](https://huggingface.co/golden-retrievers/gr-health-multimodal) | genomics+labs+path+behavior → risk + hazard | ✅ architecture built |
+| **CV tooling** (pose/seg/re-ID) | [gr-vision-tooling](https://github.com/golden-retrievers/gr-vision-tooling) | image/video → keypoints/masks/embeddings | 🚧 planned |
+
+The sections below catalog the **foundation models we build on** (the SOTA bases).
+
 ## Re-identification (individual ID)
 
 | Model | Arch | SOTA notes | License | Source |

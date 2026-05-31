@@ -1,0 +1,29 @@
+# Data & model artifacts live on Hugging Face, not in git
+*.parquet
+*.arrow
+*.bin
+*.safetensors
+*.pt
+*.ckpt
+*.h5
+*.npy
+*.npz
+data/
+checkpoints/
+wandb/
+
+# Media
+*.mp4
+*.mov
+*.avi
+*.zip
+*.tar
+*.tar.gz
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store

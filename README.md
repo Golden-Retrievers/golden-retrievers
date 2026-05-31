@@ -45,6 +45,7 @@ All consolidated into a single repo — **`gr-vision-tooling`** — since CV is 
 
 - 🤗 Hugging Face org (data + models): https://huggingface.co/golden-retrievers
 - 🐙 GitHub org (code + docs): https://github.com/golden-retrievers
+- 📊 Experiment dashboard (live W&B): https://huggingface.co/spaces/golden-retrievers/experiments — embeds [wandb.ai/golden-retrievers](https://wandb.ai/golden-retrievers)
 
 ## Licensing
 

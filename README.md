@@ -8,18 +8,27 @@ This is the **hub repository** for the [`golden-retrievers`](https://github.com/
 
 ## Mission
 
-Assemble the largest, best-curated, openly-documented collection of golden-retriever imagery and video, and train/curate state-of-the-art models across the full vision stack:
+Build the highest-**impact** golden-retriever AI collection, not just the broadest. A verified literature survey ([`docs/GR-AI-LANDSCAPE.md`](docs/GR-AI-LANDSCAPE.md)) shows the golden-retriever × AI field is dominated by **health, cancer, and genomics** — anchored on the **Golden Retriever Lifetime Study (GRLS)**, where cancer causes ~75% of deaths — while generic computer vision is low-uniqueness for the breed. So we center on health/genomics and treat CV as **enabling tooling**.
+
+### 🩺 Health & genomics track (primary)
 
 | Task | Description | Repo |
 |------|-------------|------|
-| 🏷️ Classification | Fine-grained breed ID + individual dog re-identification | `gr-classification` |
-| ✂️ Segmentation | Semantic + instance segmentation of dogs and parts | `gr-segmentation` |
-| 🦴 Pose | Keypoint / pose estimation | `gr-pose` |
-| 🏃 Activity recognition | Action / behavior classification in images & video | `gr-activity-recognition` |
-| 🎬 Video generation | Generative video of golden retrievers | `gr-video-generation` |
-| 🔮 Behavior prediction | Activity / motion forecasting | `gr-behavior-prediction` |
+| 🧬 Cancer genomics / GWAS | Disease-risk modeling on GRLS genotypes (3,224 dogs, ~914K SNPs) | `gr-cancer-genomics` |
+| 🔬 Histopathology AI | Mast cell tumor / hemangiosarcoma / lymphoma detection & grading | `gr-histopathology` |
+| 🧩 Multi-modal cancer risk | Fuse genomics + labs + histopath + behavior (the open opportunity) | `gr-health-multimodal` |
 
-(Task repos are created as work begins — see [ROADMAP.md](ROADMAP.md).)
+### 👁️ Enabling-CV track (supports the above)
+
+| Task | Now reframed as | Repo |
+|------|-----------------|------|
+| 🦴 Pose | → gait / lameness / orthopedic analysis | `gr-pose` |
+| ✂️ Segmentation | → body-condition scoring | `gr-segmentation` |
+| 🏷️ Classification / re-ID | → lost-dog recovery, cohort QC | `gr-classification` |
+| 🏃 Activity / behavior | → welfare & working-dog (guide-dog) selection | `gr-activity-recognition`, `gr-behavior-prediction` |
+| 🎬 Video generation | deprioritized (novelty) | `gr-video-generation` *(archived)* |
+
+See [ROADMAP.md](ROADMAP.md) for the phased plan.
 
 ## Layout
 

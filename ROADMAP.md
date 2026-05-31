@@ -4,6 +4,19 @@ Derived from a 2026 SOTA review ([DATASETS.md](DATASETS.md), [MODELS.md](MODELS.
 
 > **The general/multi-species building blocks are mature, but dog-specific — let alone golden-retriever-specific — datasets and foundation models are nearly nonexistent.**
 
+## 🧭 Direction update (post GR×AI literature review)
+
+A second, targeted survey ([`docs/GR-AI-LANDSCAPE.md`](docs/GR-AI-LANDSCAPE.md)) reframed scope: the **highest real-world impact for goldens is health/cancer/genomics**, anchored on the **Golden Retriever Lifetime Study (GRLS)** — not generic CV. We have therefore **pivoted to a health/genomics-first program**, with CV repurposed as enabling tooling (pose→gait, seg→body-condition, re-ID→recovery). New primary repos: `gr-cancer-genomics`, `gr-histopathology`, `gr-health-multimodal`. `gr-video-generation` archived.
+
+**Immediate track (lowest friction → start now):**
+1. ✅ Mirror open **GRLS genomics** (CC-BY-SA, `s3://mafgrlsgenome`) → HF dataset `golden-retrievers/grls-genomics` (3,224 dogs, 913,984 SNPs, PLINK/CanFam3).
+2. PLINK QC + PCA population-structure baseline (`gr-cancer-genomics`).
+3. Apply for **GRLS Data Commons** DUA (CZ Biohub) to unlock phenotypes/labs/histopath → enables disease GWAS + the flagship multi-modal cancer model.
+4. Join genotypes ↔ phenotypes via `map_id_sex.tab` → first golden hemangiosarcoma / lymphoma / hip-dysplasia GWAS.
+
+---
+
+
 So the winning strategy is **not** to compete with multi-species foundation models on breadth. It's to build the **deepest, densest, best-labeled golden-retriever corpus in the world** and use it to *specialize* the best general models into a GR-native suite that beats them on every GR task.
 
 ## Strategic pillars

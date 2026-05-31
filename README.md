@@ -20,15 +20,19 @@ Build the highest-**impact** golden-retriever AI collection, not just the broade
 
 ### 👁️ Enabling-CV track (supports the above)
 
-| Task | Now reframed as | Repo |
-|------|-----------------|------|
-| 🦴 Pose | → gait / lameness / orthopedic analysis | `gr-pose` |
-| ✂️ Segmentation | → body-condition scoring | `gr-segmentation` |
-| 🏷️ Classification / re-ID | → lost-dog recovery, cohort QC | `gr-classification` |
-| 🏃 Activity / behavior | → welfare & working-dog (guide-dog) selection | `gr-activity-recognition`, `gr-behavior-prediction` |
-| 🎬 Video generation | deprioritized (novelty) | `gr-video-generation` *(archived)* |
+All consolidated into a single repo — **`gr-vision-tooling`** — since CV is now supporting infrastructure, not a set of flagship tasks:
 
-See [ROADMAP.md](ROADMAP.md) for the phased plan.
+| CV capability | Serves health task |
+|------|-----------------|
+| 🦴 Pose / keypoints | gait / lameness / orthopedic analysis |
+| ✂️ Segmentation | body-condition scoring |
+| 🏷️ Classification / re-ID | lost-dog recovery, cohort QC |
+| 🏃 Activity / behavior | welfare & working-dog (guide-dog) selection |
+
+(Video generation was dropped as novelty. See [ROADMAP.md](ROADMAP.md) for the phased plan.)
+
+### Repos
+`golden-retrievers` (hub) · `gr-cancer-genomics` · `gr-histopathology` · `gr-health-multimodal` · `gr-vision-tooling`
 
 ## Layout
 

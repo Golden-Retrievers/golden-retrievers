@@ -44,6 +44,34 @@ Index of upstream datasets we build on and derived datasets we publish. Derived 
 |---|---|---|
 | **Morris Animal Foundation — Golden Retriever Lifetime Study** | Longitudinal health/behavior data on ~3,000 goldens | Not imagery, but the richest GR-specific cohort; potential metadata/behavior linkage | [data commons](https://datacommons.morrisanimalfoundation.org/data-roadmap) |
 
+## GRLS genomics + phenotypes (the health track's primary corpus)
+
+The cancer-genomics + multimodal work is anchored on the GRLS cohort: **genotypes** (public, no login) plus **phenotype/clinical tables** (DUA-gated). Genotypes live on Hugging Face; phenotype tables are staged locally under `gr-cancer-genomics/data/datacommons/` (git-ignored under the DUA — not redistributed).
+
+### Genotypes (public)
+
+| Dataset | Size | License | Source |
+|---|---|---|---|
+| **GRLS Axiom HD genotyping** | ~1.1M markers (913,984 after release QC), 3,224 dogs (3,024 GRLS + 200 Golden Oldies), CanFam3/PLINK | CC-BY-SA | AWS Open Data `s3://mafgrlsgenome` (`aws s3 ls --no-sign-request`); [registry](https://registry.opendata.aws/maf-genome) · mirror `hf.co/golden-retrievers/grls-genomics` |
+
+### Phenotype / clinical tables (DUA-gated; 37 CSVs across 24 datasets)
+
+All key on `subject_id` = the genotype `.fam` IID (the public `grls…` ID) — **direct join to genotypes**; the lone exception is `atopic_dermatitis_questionnaire` (keys on the MAF-internal `094-…` form + carries a `public_id` column). Core cohort tables cover all 3,044 GRLS dogs, **3,024 of them genotyped**.
+
+| Table(s) | Rows | Dogs w/geno | Role in our models |
+|---|---|---|---|
+| **`study_endpoints`** | 1,247 | 1,034 | **Adjudicated cancer endpoints** (`tracked_condition`, `tier_of_confidence`, `is_cause_of_death`, `is_recurrence`). GWAS/PRS labels. Cases: hemangiosarcoma ~312, mast cell tumor ~184, lymphoma ~145, osteosarcoma ~19 |
+| **`conditions_summary`** + 11 `conditions_<system>` (`cardio`-via-summary, `dental`, `ear_nose_throat`, `endocrine`, `eye`, `gastrointestinal`, `hematologic`, `infectious`, `musculoskeletal`, `reproductive`, `skin`, `urinary`) | 54,792 ea. | 3,024 | Per dog×year diagnosis flags; `summary.neoplasia` 0/1 = broad cancer flag used to define clean (cancer-free) GWAS controls |
+| **`clinical_labs`** | 1.44M | 3,024 | Long-format labs (`test_group`/`test_name`/`test_value`/`ref_range`) → multimodal `labs-GRU` modality; strongest unimodal cancer predictors |
+| **`dog_profile`** | 3,044 | 3,024 | Signalment + survival: `sex_status`, `birth_date`, `death_date`, `is_euthanized`, `spay_neuter_date`, `study_status`, `coat_color` → covariates + censoring |
+| `exam_physical` | 20,973 | 3,024 | Weight, BCS, vitals → clinical modality; body-condition label for CV tooling |
+| `medications`, `over_the_counter_medications`, `supplements`, `flea_tick_heartworm`, `vaccines` | 49k–52k | ~3,024 | Treatment/exposure covariates + confounders |
+| `environment_*` (7), `poison_exposure`, `location_history`, `lifestyle` | varies | ~3,024 | Environmental / GxE risk factors |
+| `activity_*` (4) | 8k–26k | ~3,024 | Activity/lifestyle; gait/welfare links for CV tooling |
+| `goldenage_load`, `goldenage_coast`, `goldenage_dishaa`, `atopic_dermatitis_questionnaire` | 1.2k–1.9k | 886–1,621 | Aging sub-study (osteoarthritis, cognition) + dermatitis; secondary endpoints |
+
+> Build a GWAS phenotype with `gr-cancer-genomics/scripts/prepare_phenotypes.py` (joins `study_endpoints` cases + `conditions_summary`-purged controls to the `.fam`).
+
 ## Coverage gaps (no good public dataset found, 2026)
 
 - **Dog/golden-retriever-specific video-generation** training corpora — none.

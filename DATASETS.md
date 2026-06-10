@@ -46,7 +46,7 @@ Index of upstream datasets we build on and derived datasets we publish. Derived 
 
 ## GRLS genomics + phenotypes (the health track's primary corpus)
 
-The cancer-genomics + multimodal work is anchored on the GRLS cohort: **genotypes** (public, no login) plus **phenotype/clinical tables** (DUA-gated). Genotypes live on Hugging Face; phenotype tables are staged locally under `gr-cancer-genomics/data/datacommons/` (git-ignored under the DUA — not redistributed).
+The cancer-genomics + multimodal work is anchored on the GRLS cohort: **genotypes** (public, no login) plus **phenotype/clinical tables** (DUA-gated). Genotypes live on Hugging Face; phenotype tables are staged locally under `gr-hemangiosarcoma/data/datacommons/` (git-ignored under the DUA — not redistributed).
 
 ### Genotypes (public)
 
@@ -70,7 +70,7 @@ All key on `subject_id` = the genotype `.fam` IID (the public `grls…` ID) — 
 | `activity_*` (4) | 8k–26k | ~3,024 | Activity/lifestyle; gait/welfare links for CV tooling |
 | `goldenage_load`, `goldenage_coast`, `goldenage_dishaa`, `atopic_dermatitis_questionnaire` | 1.2k–1.9k | 886–1,621 | Aging sub-study (osteoarthritis, cognition) + dermatitis; secondary endpoints |
 
-> Build a GWAS phenotype with `gr-cancer-genomics/scripts/prepare_phenotypes.py` (joins `study_endpoints` cases + `conditions_summary`-purged controls to the `.fam`).
+> Build a GWAS phenotype with `gr-hemangiosarcoma/scripts/prepare_phenotypes.py` (joins `study_endpoints` cases + `conditions_summary`-purged controls to the `.fam`).
 
 ## Coverage gaps (no good public dataset found, 2026)
 

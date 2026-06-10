@@ -1,16 +1,16 @@
-# Roadmap: Building the World's Best Golden Retriever Vision Collection
+# Roadmap: Understanding Canine Hemangiosarcoma
 
-Derived from a 2026 SOTA review ([DATASETS.md](DATASETS.md), [MODELS.md](MODELS.md)). The verified finding that shapes everything:
+Derived from a 2026 literature review ([DATASETS.md](DATASETS.md), [MODELS.md](MODELS.md), [`docs/GR-AI-LANDSCAPE.md`](docs/GR-AI-LANDSCAPE.md)) and a two-pass adversarially verified HSA review. The findings that shape everything:
 
-> **The general/multi-species building blocks are mature, but dog-specific — let alone golden-retriever-specific — datasets and foundation models are nearly nonexistent.**
+> **Hemangiosarcoma is the deadliest cancer in golden retrievers, caught late, with no curative therapy in decades — and it is a faithful genomic model for human angiosarcoma. The durable AI lever is understanding its biology and genetics, not detection or generic CV.**
 
-## 🧭 Direction update (post GR×AI literature review)
+## 🧭 Current direction (HSA-focused)
 
-A second, targeted survey ([`docs/GR-AI-LANDSCAPE.md`](docs/GR-AI-LANDSCAPE.md)) reframed scope: the **highest real-world impact for goldens is health/cancer/genomics**, anchored on the **Golden Retriever Lifetime Study (GRLS)** — not generic CV. We have therefore **pivoted to a health/genomics-first program**, with CV repurposed as enabling tooling (pose→gait, seg→body-condition, re-ID→recovery). New primary repos: `gr-cancer-genomics`, `gr-histopathology`, `gr-health-multimodal`. `gr-video-generation` archived.
+The program is now centered on **understanding hemangiosarcoma**. The flagship repo **`gr-hemangiosarcoma`** holds the research corpus (papers, datasets, images), the germline GWAS/PRS/variant-annotation pipeline, and the verified knowledge base. `gr-histopathology` and `gr-health-multimodal` feed in (tumor histology + multimodal integration); `gr-vision-tooling` is supporting CV only. Earlier generic-CV and early-detection framings are deprioritized (lead-time bias + HSA lethality make screening low-value).
 
 **Immediate track (lowest friction → start now):**
 1. ✅ Mirror open **GRLS genomics** (CC-BY-SA, `s3://mafgrlsgenome`) → HF dataset `golden-retrievers/grls-genomics` (3,224 dogs, 913,984 SNPs, PLINK/CanFam3).
-2. PLINK QC + PCA population-structure baseline (`gr-cancer-genomics`).
+2. PLINK QC + PCA population-structure baseline (`gr-hemangiosarcoma`).
 3. Apply for **GRLS Data Commons** DUA (CZ Biohub) to unlock phenotypes/labs/histopath → enables disease GWAS + the flagship multi-modal cancer model.
 4. Join genotypes ↔ phenotypes via `map_id_sex.tab` → first golden hemangiosarcoma / lymphoma / hip-dysplasia GWAS.
 

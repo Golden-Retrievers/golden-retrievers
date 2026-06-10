@@ -1,38 +1,29 @@
 # 🦮 Golden Retrievers
 
-**The world's largest open corpus and model suite for golden retriever computer vision.**
+**An open effort to understand canine hemangiosarcoma — the deadliest cancer in golden retrievers, and a translational model for human angiosarcoma.**
 
-This is the **hub repository** for the [`golden-retrievers`](https://github.com/golden-retrievers) organization. It holds the dataset index, model index, task roadmap, and shared documentation. Large data and trained models live on the linked Hugging Face org: **https://huggingface.co/golden-retrievers**.
+This is the **hub repository** for the [`golden-retrievers`](https://github.com/golden-retrievers) organization. It holds the dataset index, model index, roadmap, and shared documentation. Large data and trained models live on the linked Hugging Face org: **https://huggingface.co/golden-retrievers**.
 
 > Status: 🚧 Bootstrapping. Currently private. See [ROADMAP.md](ROADMAP.md) for the build-out plan.
 
 ## Mission
 
-Build the highest-**impact** golden-retriever AI collection, not just the broadest. A verified literature survey ([`docs/GR-AI-LANDSCAPE.md`](docs/GR-AI-LANDSCAPE.md)) shows the golden-retriever × AI field is dominated by **health, cancer, and genomics** — anchored on the **Golden Retriever Lifetime Study (GRLS)**, where cancer causes ~75% of deaths — while generic computer vision is low-uniqueness for the breed. So we center on health/genomics and treat CV as **enabling tooling**.
+**Understand hemangiosarcoma (HSA).** A two-pass, adversarially verified literature review showed that for goldens the highest-impact AI work is health/cancer/genomics (cancer causes ~75% of deaths), and that HSA is both the breed's deadliest cancer and a faithful genomic model for the rare human angiosarcoma. Standard care has not improved survival (~4-6 months) in decades and the disease is caught late, so the durable levers are **understanding its biology and genetics** and **translational target discovery** — not generic computer vision. We are therefore focused on building the deepest HSA research corpus and the analyses it enables.
 
-### 🩺 Health & genomics track (primary)
+### 🩸 Flagship: understanding HSA
 
-| Task | Description | Repo |
+| Focus | Description | Repo |
 |------|-------------|------|
-| 🧬 Cancer genomics / GWAS | Disease-risk modeling on GRLS genotypes (3,224 dogs, ~914K SNPs) | `gr-cancer-genomics` |
-| 🔬 Histopathology AI | Mast cell tumor / hemangiosarcoma / lymphoma detection & grading | `gr-histopathology` |
-| 🧩 Multi-modal cancer risk | Fuse genomics + labs + histopath + behavior (the open opportunity) | `gr-health-multimodal` |
+| 🩸 Hemangiosarcoma program | Literature/dataset/image corpus + germline GWAS/PRS + variant annotation + knowledge base | **`gr-hemangiosarcoma`** |
+| 🔬 Histopathology AI | Tumor histology (HSA + breed-relevant tumors): detection, grading, mitotic figures | `gr-histopathology` |
+| 🧩 Multi-modal integration | Fuse genomics + labs + histopath + behavior for HSA biology | `gr-health-multimodal` |
 
-### 👁️ Enabling-CV track (supports the above)
+### 👁️ Enabling-CV track (support only)
 
-All consolidated into a single repo — **`gr-vision-tooling`** — since CV is now supporting infrastructure, not a set of flagship tasks:
-
-| CV capability | Serves health task |
-|------|-----------------|
-| 🦴 Pose / keypoints | gait / lameness / orthopedic analysis |
-| ✂️ Segmentation | body-condition scoring |
-| 🏷️ Classification / re-ID | lost-dog recovery, cohort QC |
-| 🏃 Activity / behavior | welfare & working-dog (guide-dog) selection |
-
-(Video generation was dropped as novelty. See [ROADMAP.md](ROADMAP.md) for the phased plan.)
+Consolidated into **`gr-vision-tooling`** (pose→gait, segmentation→body-condition, re-ID→cohort QC) — supporting infrastructure, not a focus.
 
 ### Repos
-`golden-retrievers` (hub) · `gr-cancer-genomics` · `gr-histopathology` · `gr-health-multimodal` · `gr-vision-tooling`
+`golden-retrievers` (hub) · **`gr-hemangiosarcoma`** (flagship) · `gr-histopathology` · `gr-health-multimodal` · `gr-vision-tooling`
 
 ## Layout
 

@@ -9,7 +9,7 @@ Foundation models we build on, and models we train/publish. Trained checkpoints 
 | Model | Repo · 🤗 | Input → Output | Status |
 |---|---|---|---|
 | **Disease GWAS** (mixed model) | [gr-hemangiosarcoma](https://github.com/golden-retrievers/gr-hemangiosarcoma) | genotypes + phenotype + GRM → per-SNP association | ✅ real HSA run, λ=0.955, h²≈0.13 |
-| **Polygenic Risk Score** | [gr-hemangiosarcoma](https://github.com/golden-retrievers/gr-hemangiosarcoma) · [🤗 gr-cancer-prs](https://huggingface.co/golden-retrievers/gr-cancer-prs) | genotypes → per-dog risk score | ✅ built, AUC 0.635 (sim) |
+| **Polygenic Risk Score** | [gr-hemangiosarcoma](https://github.com/golden-retrievers/gr-hemangiosarcoma) · [🤗 gr-hsa-prs](https://huggingface.co/golden-retrievers/gr-hsa-prs) | genotypes → per-dog risk score | ✅ built, AUC 0.635 (sim) |
 | **MIL slide classifier** | [gr-histopathology](https://github.com/golden-retrievers/gr-histopathology) · [🤗](https://huggingface.co/golden-retrievers/gr-histopathology) | tile embeddings → slide grade + heatmap | ✅ built, CCMCT-wired |
 | **Mitotic-figure detector** | [gr-histopathology](https://github.com/golden-retrievers/gr-histopathology) | HPF tiles → mitosis boxes/count | 🚧 planned |
 | **Multi-modal cancer risk** | [gr-health-multimodal](https://github.com/golden-retrievers/gr-health-multimodal) · [🤗](https://huggingface.co/golden-retrievers/gr-health-multimodal) | genomics+labs+path+behavior → risk + hazard | ✅ architecture built |

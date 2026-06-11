@@ -18,19 +18,19 @@ This is the **hub repository** for the [`golden-retrievers`](https://github.com/
 | 🔬 Histopathology AI | Tumor histology (HSA + breed-relevant tumors): detection, grading, mitotic figures | `gr-histopathology` |
 | 🧩 Multi-modal integration | Fuse genomics + labs + histopath + behavior for HSA biology | `gr-health-multimodal` |
 
-### 👁️ Enabling-CV track (support only)
+### 👁️ Enabling-CV track (archived)
 
-Consolidated into **`gr-vision-tooling`** (pose→gait, segmentation→body-condition, re-ID→cohort QC) — supporting infrastructure, not a focus.
+`gr-vision-tooling` (pose→gait, segmentation→body-condition, re-ID→cohort QC) is **archived** — off the HSA focus; kept read-only for reference.
 
 ### Repos
-`golden-retrievers` (hub) · **`gr-hemangiosarcoma`** (flagship) · `gr-histopathology` · `gr-health-multimodal` · `gr-vision-tooling`
+`golden-retrievers` (hub) · **`gr-hemangiosarcoma`** (flagship) · `gr-histopathology` · `gr-health-multimodal` · ~~`gr-vision-tooling`~~ (archived)
 
 ## Where things live
 
 | Surface | Holds | Where |
 |---|---|---|
-| 🤗 **Hugging Face** | Data + models | datasets [`grls-genomics`](https://huggingface.co/datasets/golden-retrievers/grls-genomics) · [`hsa-literature`](https://huggingface.co/datasets/golden-retrievers/hsa-literature); models [`gr-cancer-prs`](https://huggingface.co/golden-retrievers/gr-cancer-prs) · [`gr-histopathology`](https://huggingface.co/golden-retrievers/gr-histopathology) · [`gr-health-multimodal`](https://huggingface.co/golden-retrievers/gr-health-multimodal) |
-| 📊 **Weights & Biases** | Experiments | [wandb.ai/golden-retrievers](https://wandb.ai/golden-retrievers) (`gr-cancer-gwas`, `gr-cancer-prs`) — embedded in the [experiments Space](https://huggingface.co/spaces/golden-retrievers/experiments) |
+| 🤗 **Hugging Face** | Data + models | datasets [`grls-genomics`](https://huggingface.co/datasets/golden-retrievers/grls-genomics) · [`hsa-literature`](https://huggingface.co/datasets/golden-retrievers/hsa-literature); models [`gr-hsa-prs`](https://huggingface.co/golden-retrievers/gr-hsa-prs) · [`gr-histopathology`](https://huggingface.co/golden-retrievers/gr-histopathology) · [`gr-health-multimodal`](https://huggingface.co/golden-retrievers/gr-health-multimodal) |
+| 📊 **Weights & Biases** | Experiments | [wandb.ai/golden-retrievers](https://wandb.ai/golden-retrievers) (`gr-hsa-gwas`, `gr-hsa-prs`) — embedded in the [experiments Space](https://huggingface.co/spaces/golden-retrievers/experiments) |
 | 🐙 **GitHub** | Code + docs | this org — flagship [`gr-hemangiosarcoma`](https://github.com/golden-retrievers/gr-hemangiosarcoma) + feeders |
 
 ## Layout

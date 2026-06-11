@@ -25,6 +25,14 @@ Consolidated into **`gr-vision-tooling`** (pose→gait, segmentation→body-cond
 ### Repos
 `golden-retrievers` (hub) · **`gr-hemangiosarcoma`** (flagship) · `gr-histopathology` · `gr-health-multimodal` · `gr-vision-tooling`
 
+## Where things live
+
+| Surface | Holds | Where |
+|---|---|---|
+| 🤗 **Hugging Face** | Data + models | datasets [`grls-genomics`](https://huggingface.co/datasets/golden-retrievers/grls-genomics) · [`hsa-literature`](https://huggingface.co/datasets/golden-retrievers/hsa-literature); models [`gr-cancer-prs`](https://huggingface.co/golden-retrievers/gr-cancer-prs) · [`gr-histopathology`](https://huggingface.co/golden-retrievers/gr-histopathology) · [`gr-health-multimodal`](https://huggingface.co/golden-retrievers/gr-health-multimodal) |
+| 📊 **Weights & Biases** | Experiments | [wandb.ai/golden-retrievers](https://wandb.ai/golden-retrievers) (`gr-cancer-gwas`, `gr-cancer-prs`) — embedded in the [experiments Space](https://huggingface.co/spaces/golden-retrievers/experiments) |
+| 🐙 **GitHub** | Code + docs | this org — flagship [`gr-hemangiosarcoma`](https://github.com/golden-retrievers/gr-hemangiosarcoma) + feeders |
+
 ## Layout
 
 - [`DATASETS.md`](DATASETS.md) — index of all source + derived datasets, with sizes, licenses, and HF links.

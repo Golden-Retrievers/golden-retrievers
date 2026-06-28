@@ -1,60 +1,31 @@
 # Models Index
 
-Foundation models we build on, and models we train/publish. Trained checkpoints live on the [HF org](https://huggingface.co/golden-retrievers).
+Models we train/publish for the hemangiosarcoma (HSA) program, and the foundation models they build on. Trained checkpoints live on the [HF org](https://huggingface.co/golden-retrievers).
 
-> Compiled from a verified SOTA review (2026). **Watch licenses** — several SOTA animal models are non-commercial.
+> Compiled from a verified SOTA review (2026). **Watch licenses** — several SOTA bases are non-commercial.
 
 ## Models we are building
 
-| Model | Repo · 🤗 | Input → Output | Status |
+All HSA models now live in the single flagship repo, [`gr-hemangiosarcoma`](https://github.com/golden-retrievers/gr-hemangiosarcoma).
+
+| Model | Code · 🤗 | Input → Output | Status |
 |---|---|---|---|
-| **Disease GWAS** (mixed model) | [gr-hemangiosarcoma](https://github.com/golden-retrievers/gr-hemangiosarcoma) | genotypes + phenotype + GRM → per-SNP association | ✅ real HSA run, λ=0.955, h²≈0.13 |
-| **Polygenic Risk Score** | [gr-hemangiosarcoma](https://github.com/golden-retrievers/gr-hemangiosarcoma) · [🤗 gr-hsa-prs](https://huggingface.co/golden-retrievers/gr-hsa-prs) | genotypes → per-dog risk score | ✅ built, AUC 0.635 (sim) |
-| **MIL slide classifier** | [gr-histopathology](https://github.com/golden-retrievers/gr-histopathology) · [🤗](https://huggingface.co/golden-retrievers/gr-histopathology) | tile embeddings → slide grade + heatmap | ✅ built, CCMCT-wired |
-| **Mitotic-figure detector** | [gr-histopathology](https://github.com/golden-retrievers/gr-histopathology) | HPF tiles → mitosis boxes/count | 🚧 planned |
-| **Multi-modal cancer risk** | [gr-health-multimodal](https://github.com/golden-retrievers/gr-health-multimodal) · [🤗](https://huggingface.co/golden-retrievers/gr-health-multimodal) | genomics+labs+path+behavior → risk + hazard | ✅ architecture built |
-| **CV tooling** (pose/seg/re-ID) | [gr-vision-tooling](https://github.com/golden-retrievers/gr-vision-tooling) | image/video → keypoints/masks/embeddings | 🚧 planned |
+| **Disease GWAS** (mixed model) | `scripts/run_gwas.py` | genotypes + phenotype + GRM → per-SNP HSA association | ✅ real HSA run, λ=0.955, h²≈0.13 |
+| **Polygenic Risk Score** | `scripts/prs.py` · [🤗 gr-hsa-prs](https://huggingface.co/golden-retrievers/gr-hsa-prs) | genotypes → per-dog HSA risk score | ✅ built, AUC 0.635 (sim) |
+| **Variant annotation** (ESM-2) | `scripts/annotate_gwas_esm.py` | HSA missense hits → consequence + ESM-2 LLR | ✅ built |
+| **Multi-modal HSA risk** | `scripts/multimodal_fusion.py` | genomics+labs+path+behavior → HSA risk + age-at-onset hazard | ✅ architecture built |
+| **HSA histopathology MIL** | `scripts/mil_model.py` + `tile_and_embed.py` | tile embeddings → slide label + heatmap | ✅ infra built; awaiting HSA WSI |
 
-The sections below catalog the **foundation models we build on** (the SOTA bases).
+## Foundation models we build on
 
-## Re-identification (individual ID)
+Only the bases the HSA models actually use.
 
-| Model | Arch | SOTA notes | License | Source |
-|---|---|---|---|---|
-| **MiewID** (msv3) | — | Current best multispecies re-ID; 49 species / 37,138 individuals / 225k annotations; **+19.2% top-1 over MegaDescriptor** on 33 unseen species | check repo | [arXiv 2412.05602](https://arxiv.org/html/2412.05602v1) |
-| **MegaDescriptor-L-384** | Swin-L (~229M) | First re-ID foundation model; beats CLIP & DINOv2 | **CC-BY-NC-4.0** (non-commercial) | [HF: BVRA](https://huggingface.co/BVRA/MegaDescriptor-L-384) · [WACV'24](https://arxiv.org/abs/2311.09118) |
-| DINOv2 / DINOv3 | ViT | Strong general embeddings; re-ID baseline (beaten by above) | varies | — |
-
-## Pose / keypoints
-
-| Model | Notes | Source |
-|---|---|---|
-| **X-Pose** | Promptable (visual/text) multi-object keypoints; 73.2 AP on AP-10K (+27.7 over ED-Pose); trained on UniKPT | [arXiv 2310.08530](https://arxiv.org/html/2310.08530v2) |
-| **SuperAnimal-Quadruped** | Zero-shot quadruped pose (incl. dogs), 39 kpts; DeepLabCut ecosystem | [Nat. Comms](https://pmc.ncbi.nlm.nih.gov/articles/PMC11192880/) |
-| ViTPose | Strong ViT pose backbone | — |
-
-## Segmentation
-
-| Model | Notes | Source |
-|---|---|---|
-| **SAM 2** | Promptable image+video segmentation, streaming memory, real-time; class-agnostic → directly usable on dogs | [arXiv 2408.00714](https://arxiv.org/abs/2408.00714) |
-
-## Action recognition & behavior
-
-| Model / approach | Notes |
-|---|---|
-| Video transformers (VideoMAE / InternVideo class) fine-tuned on Animal Kingdom | Leading approach for animal multi-label action recognition |
-
-## Video & motion generation
-
-| Model | Notes | Source |
-|---|---|---|
-| **AniMo** | Species-aware *text-driven animal motion* generation (CVPR'25) — motion, not pixels | [CVPR'25 PDF](https://openaccess.thecvf.com/content/CVPR2025/papers/Wang_AniMo_Species-Aware_Model_for_Text-Driven_Animal_Motion_Generation_CVPR_2025_paper.pdf) |
-| Sora-2 / Veo-3 / Runway Gen-4 | General SOTA text/image→video; no animal-specific fine-tunes | [comparison](https://reezo.ai/blog/sora-2-vs-veo-3-vs-runway-gen-4-comparison-2025) |
-| SVD / CogVideoX | Open video diffusion bases to fine-tune | — |
+| Model | Used for | License | Source |
+|---|---|---|---|
+| **ESM-2** | Protein-level effect scores for HSA missense variants (variant annotation) | MIT | [HF: facebook/esm2](https://huggingface.co/facebook/esm2_t33_650M_UR50D) |
+| **Pathology FMs** (UNI / UNI2, CONCH, Virchow2, Prov-GigaPath, H-optimus-0) | Frozen tile encoders for the HSA histopathology MIL pipeline | gated, mostly research / non-commercial — check each | [HF: MahmoodLab](https://huggingface.co/MahmoodLab) and others |
 
 ## Gaps (build opportunities)
 
-- **No dog-specific or golden-retriever-specific foundation model exists.** Everything above is multi-species.
-- No open **dog video-generation** model or **behavior-forecasting** model.
-- → Our edge is *specialization*: fine-tune these general models on a dense, GR-specific corpus.
+- No **canine HSA histopathology foundation model**; the pipeline relies on human-H&E pathology FMs, and human→dog transfer is an assumption to validate.
+- HSA germline signal is **non-coding/regulatory** and underpowered at current case counts; larger multi-cohort HSA collections would change what is learnable.

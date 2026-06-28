@@ -8,37 +8,31 @@ This is the **hub repository** for the [`golden-retrievers`](https://github.com/
 
 ## Mission
 
-**Understand hemangiosarcoma (HSA).** A two-pass, adversarially verified literature review showed that for goldens the highest-impact AI work is health/cancer/genomics (cancer causes ~75% of deaths), and that HSA is both the breed's deadliest cancer and a faithful genomic model for the rare human angiosarcoma. Standard care has not improved survival (~4-6 months) in decades and the disease is caught late, so the durable levers are **understanding its biology and genetics** and **translational target discovery** — not generic computer vision. We are therefore focused on building the deepest HSA research corpus and the analyses it enables.
+**Understand hemangiosarcoma (HSA).** A two-pass, adversarially verified literature review showed that for goldens the highest-impact AI work is health/cancer/genomics (cancer causes ~75% of deaths), and that HSA is both the breed's deadliest cancer and a faithful genomic model for the rare human angiosarcoma. Standard care has not improved survival (~4-6 months) in decades and the disease is caught late, so the durable levers are **understanding its biology and genetics** and **translational target discovery**, not generic computer vision. The whole effort is HSA-only: build the deepest HSA research corpus and the analyses it enables.
 
-### 🩸 Flagship: understanding HSA
+### One flagship repo
 
-| Focus | Description | Repo |
-|------|-------------|------|
-| 🩸 Hemangiosarcoma program | Literature/dataset/image corpus + germline GWAS/PRS + variant annotation + knowledge base | **`gr-hemangiosarcoma`** |
-| 🔬 Histopathology AI | Tumor histology (HSA + breed-relevant tumors): detection, grading, mitotic figures | `gr-histopathology` |
-| 🧩 Multi-modal integration | Fuse genomics + labs + histopath + behavior for HSA biology | `gr-health-multimodal` |
+All research lives in **[`gr-hemangiosarcoma`](https://github.com/golden-retrievers/gr-hemangiosarcoma)**: the literature/dataset/image corpus, germline GWAS/PRS + variant annotation, the multimodal HSA risk model, the histopathology MIL infrastructure, and the verified knowledge base.
 
-### 👁️ Enabling-CV track (archived)
+This `golden-retrievers` repo is the **hub**: the dataset index, model index, and roadmap.
 
-`gr-vision-tooling` (pose→gait, segmentation→body-condition, re-ID→cohort QC) is **archived** — off the HSA focus; kept read-only for reference.
+### Archived
 
-### Repos
-`golden-retrievers` (hub) · **`gr-hemangiosarcoma`** (flagship) · `gr-histopathology` · `gr-health-multimodal` · ~~`gr-vision-tooling`~~ (archived)
+The earlier satellite repos are **archived** (read-only). Their HSA-relevant work was folded into the flagship: multimodal fusion (was `gr-health-multimodal`) and the attention-MIL histopathology infra (was `gr-histopathology`). `gr-vision-tooling` was general computer vision, off the HSA focus, archived without salvage.
 
 ## Where things live
 
 | Surface | Holds | Where |
 |---|---|---|
-| 🤗 **Hugging Face** | Data + models | datasets [`grls-genomics`](https://huggingface.co/datasets/golden-retrievers/grls-genomics) · [`hsa-literature`](https://huggingface.co/datasets/golden-retrievers/hsa-literature); models [`gr-hsa-prs`](https://huggingface.co/golden-retrievers/gr-hsa-prs) · [`gr-histopathology`](https://huggingface.co/golden-retrievers/gr-histopathology) · [`gr-health-multimodal`](https://huggingface.co/golden-retrievers/gr-health-multimodal) |
-| 📊 **Weights & Biases** | Experiments | [wandb.ai/golden-retrievers](https://wandb.ai/golden-retrievers) (`gr-hsa-gwas`, `gr-hsa-prs`) — embedded in the [experiments Space](https://huggingface.co/spaces/golden-retrievers/experiments) |
-| 🐙 **GitHub** | Code + docs | this org — flagship [`gr-hemangiosarcoma`](https://github.com/golden-retrievers/gr-hemangiosarcoma) + feeders |
+| 🤗 **Hugging Face** | Data + models | datasets [`grls-genomics`](https://huggingface.co/datasets/golden-retrievers/grls-genomics) · [`hsa-literature`](https://huggingface.co/datasets/golden-retrievers/hsa-literature); model [`gr-hsa-prs`](https://huggingface.co/golden-retrievers/gr-hsa-prs) |
+| 📊 **Weights & Biases** | Experiments | [wandb.ai/golden-retrievers](https://wandb.ai/golden-retrievers) (`gr-hsa-gwas`, `gr-hsa-prs`), embedded in the [experiments Space](https://huggingface.co/spaces/golden-retrievers/experiments) |
+| 🐙 **GitHub** | Code + docs | this org, flagship [`gr-hemangiosarcoma`](https://github.com/golden-retrievers/gr-hemangiosarcoma) |
 
 ## Layout
 
-- [`DATASETS.md`](DATASETS.md) — index of all source + derived datasets, with sizes, licenses, and HF links.
-- [`MODELS.md`](MODELS.md) — index of foundation models we build on and models we train, with HF links.
-- [`ROADMAP.md`](ROADMAP.md) — the plan for assembling the corpus and training the model suite.
-- `docs/` — data schema, annotation guidelines, licensing notes, evaluation protocol.
+- [`DATASETS.md`](DATASETS.md) — the HSA corpus: GRLS genomics + phenotypes, the literature dataset, with sizes, licenses, and HF links.
+- [`MODELS.md`](MODELS.md) — the HSA models we train and the foundation models they build on, with HF links.
+- [`ROADMAP.md`](ROADMAP.md) — the phased plan for understanding HSA.
 
 ## Links
 

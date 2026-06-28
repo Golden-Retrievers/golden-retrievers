@@ -2,7 +2,7 @@
 
 Derived from a 2026 literature review ([DATASETS.md](DATASETS.md), [MODELS.md](MODELS.md)) and a two-pass adversarially verified HSA review. The finding that shapes everything:
 
-> **Hemangiosarcoma is the deadliest cancer in golden retrievers, caught late, with no curative therapy in decades, and it is a faithful genomic model for human angiosarcoma. The durable AI lever is understanding its biology and genetics, not detection or generic CV.**
+> **Hemangiosarcoma is the deadliest cancer in golden retrievers, caught late, with no curative therapy in decades. The durable AI lever is understanding its biology and genetics, not detection or generic CV.**
 
 ## Current direction
 
@@ -28,8 +28,7 @@ The org is now centered on **understanding hemangiosarcoma**, in a single flagsh
 - [ ] Source digitized **HSA whole-slide images** (GRLS necropsy slides, if available under the DUA).
 - [ ] Run the attention-MIL pipeline (`scripts/mil_model.py` + `tile_and_embed.py`) on real HSA WSI; feed slide embeddings into the multimodal model.
 
-### Phase 4 — Translational angiosarcoma
-- [ ] Cross-map HSA germline/somatic findings to human **angiosarcoma** (shared TP53/PIK3CA, KDR, AXIN1).
+### Phase 4 — Release
 - [ ] Publish the corpus, models, and findings; flip releasable assets to public.
 
 ## Key constraints

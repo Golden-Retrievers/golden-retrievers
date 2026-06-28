@@ -1,6 +1,6 @@
 # 🦮 Golden Retrievers
 
-**An open effort to understand canine hemangiosarcoma — the deadliest cancer in golden retrievers, and a translational model for human angiosarcoma.**
+**An open effort to understand canine hemangiosarcoma — the deadliest cancer in golden retrievers.**
 
 This is the **hub repository** for the [`golden-retrievers`](https://github.com/golden-retrievers) organization. It holds the dataset index, model index, roadmap, and shared documentation. Large data and trained models live on the linked Hugging Face org: **https://huggingface.co/golden-retrievers**.
 
@@ -8,7 +8,7 @@ This is the **hub repository** for the [`golden-retrievers`](https://github.com/
 
 ## Mission
 
-**Understand hemangiosarcoma (HSA).** A two-pass, adversarially verified literature review showed that for goldens the highest-impact AI work is health/cancer/genomics (cancer causes ~75% of deaths), and that HSA is both the breed's deadliest cancer and a faithful genomic model for the rare human angiosarcoma. Standard care has not improved survival (~4-6 months) in decades and the disease is caught late, so the durable levers are **understanding its biology and genetics** and **translational target discovery**, not generic computer vision. The whole effort is HSA-only: build the deepest HSA research corpus and the analyses it enables.
+**Understand hemangiosarcoma (HSA).** A two-pass, adversarially verified literature review showed that for goldens the highest-impact AI work is health/cancer/genomics (cancer causes ~75% of deaths), and that HSA is the breed's deadliest cancer. Standard care has not improved survival (~4-6 months) in decades and the disease is caught late, so the durable lever is **understanding its biology and genetics**, not generic computer vision. The whole effort is HSA-only: build the deepest HSA research corpus and the analyses it enables. (HSA is a vascular-endothelial tumor; the human vascular-endothelial cancer is angiosarcoma. We study the canine disease on its own terms and make no translational claims.)
 
 ### One flagship repo
 
